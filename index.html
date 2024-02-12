@@ -30,27 +30,29 @@
         <section class="input_section">
             <div class="container">
                 <h2>Masukan Buku Baru</h2>
-                <form>
+                <form id="form">
+                    <input type="hidden" name="id" id="inputBookId">
                     <div class="form-group">
                         <label for="judul">Judul Buku</label>
-                        <input type="text">
+                        <input type="text" id="inputBookTitle" required>
                     </div>
                     <div class="form-group">
                         <label for="penulis">Penulis</label>
-                        <input type="text">
+                        <input type="text" id="inputBookAuthor" required>
                     </div>
                     <div class="form-group">
                         <label for="tahun">Tahun</label>
-                        <input type="text">
+                        <input type="text" id="inputBookYear" required>
                     </div>
                     <p class="status">Status Buku</p>
                     <div class="form-group-inline">
-                        <input type="radio" id="sudah-selesai" name="status" value="Sudah Selesai Dibaca">
+                        <input type="radio" id="inputBookIsComplete" name="status" value="Sudah Selesai Dibaca">
                         <label for="sudah-selesai">Sudah Selesai Dibaca</label><br>
-                        <input type="radio" id="belum-selesai" name="status" value="Belum Selesai Dibaca">
-                        <label for="belum-selesai">Belum Selesai Dibaca</label><br>
+                        <!-- <input type="radio" id="crud" name="status" value="Belum Selesai Dibaca">
+                        <label for="belum-selesai">Belum Selesai Dibaca</label><br> -->
                     </div>
-                    <button class="add" id="bookSubmit" type="submit">Masukan Buku Ke Rak </button>
+                    <button class="add" id="bookSubmit" type="submit" value="Create" onclick="save()">Masukan Buku
+                        Ke Rak</button>
                 </form>
             </div>
         </section>
