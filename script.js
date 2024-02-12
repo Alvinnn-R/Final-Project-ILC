@@ -1,3 +1,5 @@
+allData();
+
 function save() {
   var read = document.getElementById("inputBookIsComplete");
   if (read.checked == true) {
@@ -60,7 +62,76 @@ function save() {
   document.getElementById("form").reset();
 }
 
-function allData() {}
+function allData() {
+  table.innerHTML = ``;
+  bookList = JSON.parse(localStorage.getItem("listItem4")) ?? [];
+  bookList.forEach(function (value, i) {
+    var table = document.getElementById("table");
+    // if(value.isComplete == 0){
+    table.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${value.judul}</td>
+                <td>${value.penulis}</td>
+                <td>${value.tahun}</td>
+                <td><button class="btn btn-sm btn-warning" onclick="read(${
+                  value.id
+                },'${value.judul}','${value.penulis}',${value.tahun})">
+                <i class="fa fa-check"></i>
+                </button></td>
+                <td>
+                    <button class="btn btn-sm btn-success" onclick="find(${
+                      value.id
+                    })">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="removeData4(${
+                      value.id
+                    })">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>`;
+    // }
+  });
+  table2.innerHTML = ``;
+  bookList2 = JSON.parse(localStorage.getItem("listItem3")) ?? [];
+
+  bookList2.forEach(function (value2, i) {
+    var table2 = document.getElementById("table2");
+    // console.log(value2.isComplete);
+    // if(value2.isComplete == 1){
+    table2.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${value2.judul}</td>
+                <td>${value2.penulis}</td>
+                <td>${value2.tahun}</td>
+                <td><button class="btn btn-sm btn-warning" onclick="read2(${
+                  value2.id
+                },'${value2.judul}','${value2.penulis}',${value2.tahun})">
+                <i class="fa fa-check"></i>
+                </button></td>
+                <td>
+                    <button class="btn btn-sm btn-success" onclick="find(${
+                      value2.id
+                    })">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="removeData3(${
+                      value2.id
+                    })">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>`;
+    // }
+  });
+}
 
 function removedata() {}
 
