@@ -133,8 +133,20 @@ function allData() {
   });
 }
 
-function removedata() {}
-
-function find(id) {}
-
-function read() {}
+function removeData3(id) {
+  bookList = JSON.parse(localStorage.getItem("listItem3")) ?? [];
+  bookList = bookList.filter(function (value) {
+    return value.id != id;
+  });
+  // localStorage.clear();
+  localStorage.setItem("listItem3", JSON.stringify(bookList));
+  allData();
+}
+function removeData4(id) {
+  bookList = JSON.parse(localStorage.getItem("listItem4")) ?? [];
+  bookList = bookList.filter(function (value) {
+    return value.id != id;
+  });
+  localStorage.setItem("listItem4", JSON.stringify(bookList));
+  allData();
+}
