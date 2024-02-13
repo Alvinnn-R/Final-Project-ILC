@@ -163,3 +163,58 @@ function find(id) {
       }
     });
   }
+
+  function read(id1, judul1, penulis1, tahun1) {
+    if (id1) {
+      var item = [
+        {
+          id: id1,
+          judul: judul1,
+          penulis: penulis1,
+          tahun: tahun1,
+          isComplete: 1,
+        },
+      ];
+      bookList = JSON.parse(localStorage.getItem("listItem3")) ?? [];
+      books = item.concat(bookList);
+      var itemString = JSON.stringify(books);
+      localStorage.setItem("listItem3", itemString);
+    }
+  
+    bookList4 = JSON.parse(localStorage.getItem("listItem4")) ?? [];
+    bookList4 = bookList4.filter(function (value) {
+      return value.id != id1;
+    });
+    localStorage.setItem("listItem4", JSON.stringify(bookList4));
+    allData();
+  }
+  function read2(id1, judul1, penulis1, tahun1) {
+    if (id1) {
+      var item = [
+        {
+          id: id1,
+          judul: judul1,
+          penulis: penulis1,
+          tahun: tahun1,
+          isComplete: 1,
+        },
+      ];
+      bookList = JSON.parse(localStorage.getItem("listItem4")) ?? [];
+      books = item.concat(bookList);
+      var itemString = JSON.stringify(books);
+      localStorage.setItem("listItem4", itemString);
+    }
+  
+    bookList3 = JSON.parse(localStorage.getItem("listItem3")) ?? [];
+    bookList3 = bookList3.filter(function (value) {
+      return value.id != id1;
+    });
+    localStorage.setItem("listItem3", JSON.stringify(bookList3));
+    allData();
+  }
+  
+  function countBooks() {
+      bookList = JSON.parse(localStorage.getItem("listItem3")) ?? [];
+      var totalBook = document.getElementById("uncompleted-count");
+      totalBook.innerText += bookList.id;
+    }
