@@ -150,3 +150,16 @@ function removeData4(id) {
   localStorage.setItem("listItem4", JSON.stringify(bookList));
   allData();
 }
+
+function find(id) {
+    bookList = JSON.parse(localStorage.getItem("listItem4")) ?? [];
+    bookList.forEach(function (value) {
+      if (value.id == id) {
+        console.log(id);
+        document.getElementById("inputBookId").value = id;
+        document.getElementById("inputBookTitle").value = value.judul;
+        document.getElementById("inputBookAuthor").value = value.penulis;
+        document.getElementById("inputBookYear").value = value.tahun;
+      }
+    });
+  }
