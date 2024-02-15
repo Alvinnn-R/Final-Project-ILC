@@ -23,7 +23,7 @@
                     <a href="#crud-books">CRUD Books</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="https://github.com/Alvinnn-R">About</a>
                 </li>
             </ul>
         </nav>
@@ -31,7 +31,7 @@
 
     <main>
         <section class="input_section">
-            <div class="container">
+            <div class="container" id="crud-books">
                 <h2>Masukan Buku Baru</h2>
                 <form id="form">
                     <input type="hidden" name="id" id="inputBookId">
@@ -60,41 +60,32 @@
             </div>
         </section>
 
-        <section class="search_section">
+        <section class="search_section" id="search-books">
             <h2 class="title-section text-center">Cari Buku</h2>
             <form action="" id="search-form">
                 <input type="text" name="input-search" id="input-search" class="input-search"
-                    placeholder="input book title">
+                    placeholder="input judul buku">
                 <button type="submit" id="searchSubmit">Cari</button>
             </form>
         </section>
         <section class="summary-books-count">
             <h3 class="title-section text-center">Jumlah Buku</h3>
             <div class="book-counts">
-                <span id="uncompleted-count"></span> Selesai Baca
-                <span id="completed-count">0</span>Belum Selesai Baca
+                <span id="uncompleted-count"></span>Belum Selesai Baca
+                <span id="completed-count"></span>Selesai Baca
             </div>
         </section>
         <section class="book_self">
             <h3 class="title-section text-center">Belum Selesai Dibaca</h3>
             <div class="book_list" id="uncompleted-books">
-                <!-- <article class="book_item">
-                    <h4 class="text-book">Book Title</h4>
-                    <p class="text-book">Penulis: John Doe</p>
-                    <p class="text-book">Tahun: 2002</p> 
-                    <div class="action">
-                        <button class="green">Selesai dibaca</button>
-                        <button class="red">Hapus buku</button>
-                    </div>
-                </article> -->
                 <table id="datatable" class="fl-table">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Year</th>
-                            <th>Read</th>
+                            <th>Judul</th>
+                            <th>Penulis</th>
+                            <th>Tahun</th>
+                            <th>Selesai Baca</th>
                             <th>Edit</th>
                             <th>Hapus</th>
                         </tr>
@@ -109,23 +100,14 @@
         <section class="book_self">
             <h3 class="title-section text-center">Sudah Selesai Dibaca</h3>
             <div class="book_list" id="completed-books">
-                <!-- <article class="book_item">
-                    <h4 class="text-book">Book Title</h4>
-                    <p class="text-book">Penulis: John Doe</p>
-                    <p class="text-book">Tahun: 2002</p> 
-                    <div class="action">
-                        <button class="green">Selesai dibaca</button>
-                        <button class="red">Hapus buku</button>
-                    </div>
-                </article> -->
                 <table id="datatable" class="fl-table">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Year</th>
-                            <th>Read</th>
+                            <th>Judul</th>
+                            <th>Penulis</th>
+                            <th>Tahun</th>
+                            <th>Belum Baca</th>
                             <th>Edit</th>
                             <th>Hapus</th>
                         </tr>
